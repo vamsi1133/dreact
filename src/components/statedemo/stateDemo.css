@@ -1,0 +1,21 @@
+.profile {
+  color: rgb(24, 192, 136);
+}
+
+.profile > li {
+  background-color: rgb(247, 219, 183);
+  border: 1px solid black;
+  margin: 2px;
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  display: flex;
+  font-weight: bold;
+  padding: 2px;
+}
+
+/* .profile img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+} */
