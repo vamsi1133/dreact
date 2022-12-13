@@ -9,6 +9,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { checkValidChilds } from "../../constants/routes";
+import HigherOrderComponent from "../HOC";
 import "./forms.css";
 
 const Forms = (props) => {
@@ -73,4 +74,4 @@ const Forms = (props) => {
   );
 };
 
-export default Forms;
+export default HigherOrderComponent(Forms);

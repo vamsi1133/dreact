@@ -6,6 +6,7 @@ import { checkValidChilds } from "../../constants/routes";
 
 const Parent = (props) => {
   const [info, setInfo] = useState("hello");
+  const [counter, setCounter] = useState(1);
   const router = useNavigate();
 
   useEffect(() => {
@@ -18,9 +19,19 @@ const Parent = (props) => {
     setInfo(data);
   };
 
+  const counterHandler = () => {
+    setCounter((prev) => prev + 1);
+  };
+
   return (
     <div>
-      <Child {...props} info={info} handler={parentHandler} />
+      <Child
+        {...props}
+        counter={counter}
+        countHandler={counterHandler}
+        info={info}
+        handler={parentHandler}
+      />
       <Button variant="outlined" onClick={() => parentHandler("parent")}>
         Parent
       </Button>

@@ -1,30 +1,31 @@
 import { Button } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import HigherOrderComponent from "../HOC";
+
+const getCount = (data) => {
+  for (let i = 0; i < 1000000; i++) {
+    data += 1;
+  }
+  console.log("rendered");
+  return data;
+};
 
 const Child = (props) => {
-  const { info, handler } = props;
-  const [style, setStyle] = useState({
-    background: "red",
-  });
+  const { info, handler, counter, countHandler } = props;
+  const count = useMemo(() => getCount(counter), [counter]);
+
   const myRef = useRef();
-
-  useEffect(() => {
-    if (info === "parent") {
-      console.log(myRef.current.querySelector(".MuiButton-root"));
-      setStyle({ background: "yellow" });
-    }
-  }, [info]);
-
-  console.log(props);
 
   return (
     <div>
-      <h5 style={style}>show data: {info}</h5>
+      <h5>show data: {info}</h5>
       <Button ref={myRef} variant="contained" onClick={() => handler("child")}>
         Child
       </Button>
+      <div>{count}</div>
+      <Button onClick={countHandler}>+</Button>
     </div>
   );
 };
 
-export default Child;
+export default HigherOrderComponent(Child);
