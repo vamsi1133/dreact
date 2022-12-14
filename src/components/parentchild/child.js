@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import HigherOrderComponent from "../HOC";
+import ReduxForms from "../reduxforms";
 
 const getCount = (data) => {
   for (let i = 0; i < 1000000; i++) {
@@ -24,8 +25,9 @@ const Child = (props) => {
       </Button>
       <div>{count}</div>
       <Button onClick={countHandler}>+</Button>
+      <ReduxForms />
     </div>
   );
 };
 
-export default HigherOrderComponent(Child);
+export default Child;

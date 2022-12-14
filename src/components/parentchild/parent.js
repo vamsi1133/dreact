@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Child from "./child";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { checkValidChilds } from "../../constants/routes";
+const Child = React.lazy(() => import("./child"));
 
 const Parent = (props) => {
   const [info, setInfo] = useState("hello");

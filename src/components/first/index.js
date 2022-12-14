@@ -1,11 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const First = (props) => {
   const cars = ["Ford", "BMW", "Audi"];
-
+  const userName = useSelector((state) => state.user.password);
   const hovered = (e, val) => {
     console.log(e.target, val);
+    console.log(userName);
   };
   const clickHandler = (e) => {
     console.log(e);
@@ -24,6 +26,7 @@ const First = (props) => {
 
   return (
     <div>
+      <h2>{userName}</h2>
       <div
         onClick={clickHandler}
         onMouseEnter={(e) => {
