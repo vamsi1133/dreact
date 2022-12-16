@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/dhademo/static/css/main.5d41bd28.css",
+    "main.js": "/dhademo/static/js/main.f9ea07fb.js",
+    "static/js/544.4f5b8c18.chunk.js": "/dhademo/static/js/544.4f5b8c18.chunk.js",
+    "static/js/787.d3befce1.chunk.js": "/dhademo/static/js/787.d3befce1.chunk.js",
+    "index.html": "/dhademo/index.html",
+    "main.5d41bd28.css.map": "/dhademo/static/css/main.5d41bd28.css.map",
+    "main.f9ea07fb.js.map": "/dhademo/static/js/main.f9ea07fb.js.map",
+    "544.4f5b8c18.chunk.js.map": "/dhademo/static/js/544.4f5b8c18.chunk.js.map",
+    "787.d3befce1.chunk.js.map": "/dhademo/static/js/787.d3befce1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5d41bd28.css",
+    "static/js/main.f9ea07fb.js"
+  ]
+}
