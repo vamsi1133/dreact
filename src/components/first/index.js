@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+const cars = ["Ford", "BMW", "Audi"];
 
 const First = (props) => {
-  const cars = ["Ford", "BMW", "Audi"];
-  const userName = useSelector((state) => state.user.password);
+  const userName = useSelector((state) => state.user.username);
+
   const hovered = (e, val) => {
     console.log(e.target, val);
     console.log(userName);

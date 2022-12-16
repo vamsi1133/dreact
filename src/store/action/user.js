@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux";
 import { UPDATE_PASSWORD, UPDATE_USER_NAME } from "../utils";
 
 const updatUserName = (data) => {

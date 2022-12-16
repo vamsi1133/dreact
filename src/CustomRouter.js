@@ -6,6 +6,7 @@ import StateDemo from "./components/statedemo";
 import ClassDemo from "./components/classDemo";
 import Forms from "./components/Forms";
 import Parent from "./components/parentchild/parent";
+import Profiles from "./components/profiles";
 
 const CustomRouter = () => {
   const routes = [
@@ -15,6 +16,7 @@ const CustomRouter = () => {
     { path: "/class", element: <ClassDemo /> },
     { path: "/forms", element: <Forms /> },
     { path: "/pc", element: <Parent parentName={"Custom Router"} id={1} /> },
+    { path: "/profiles", element: <Profiles /> },
   ];
 
   return (

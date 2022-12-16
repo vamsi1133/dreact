@@ -6,31 +6,29 @@ import {
   FormGroup,
   Stack,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { checkValidChilds } from "../../constants/routes";
-import { updatUserName } from "../../store/action/user";
 import { UPDATE_CREDENTIAL } from "../../store/utils";
 
 const ReduxForms = (props) => {
   const credentails = useSelector((state) => state.user);
-  console.log(credentails);
   const dispatch = useDispatch();
 
   const router = useNavigate();
 
-  useEffect(() => {
-    if (checkValidChilds.includes(credentails.username)) {
-      //   router("/");
-    }
-  }, [credentails]);
-
-  const [showData, setShowData] = useState(false);
   const handleInput = (e) => {
     const { value, name } = e.target;
-
     dispatch({ type: UPDATE_CREDENTIAL, payload: { [name]: value } });
+  };
+
+  const loginHandler = () => {
+    if (
+      credentails.username === "vamsi123" &&
+      credentails.password === "12345"
+    ) {
+      router("/profiles");
+    }
   };
 
   return (
@@ -57,19 +55,12 @@ const ReduxForms = (props) => {
           <Button
             color="primary"
             variant="outlined"
-            onClick={() => setShowData((prev) => !prev)}
+            onClick={() => loginHandler((prev) => !prev)}
           >
-            show credentails
+            Login
           </Button>
         </Stack>
-        {showData ? (
-          <>
-            <div>username: {credentails.username}</div>
-            <div>password: {credentails.password}</div>
-          </>
-        ) : (
-          <></>
-        )}
+        <Button onClick={() => router("/first")}>First</Button>
       </Container>
     </>
   );
